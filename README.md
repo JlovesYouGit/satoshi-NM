@@ -100,3 +100,91 @@ Integrated SeedGate's seed gating into `virtual-probe_X` to create commitments.
 - Seed extraction from live HTTP content produces gates with commitment keys
 
 The server is running at `http://127.0.0.1:8000`.
+
+
+
+
+information the wall is at pipeline_ns: 0
+wall_ns: 560842
+match: True
+converged: True
+snapshot_written: 
+
+cd "/Users/u/Desktop/ALOC-position "/A_DRIVETAR && python3 -c "
+import time, sys
+sys.path.insert(0, '.')
+from drivetar_enhanced import EnhancedDrivetarCore
+
+core = EnhancedDrivetarCore()
+test_data = {'value': 42, 'label': 'nanotest'}
+
+t0 = time.perf_counter_ns()
+result = core.cycle_snapshot_once(test_data, state_id='nano_001')
+t1 = time.perf_counter_ns()
+
+print(f'wall_ns: {t1-t0}')
+print(f'match: {result[\"match\"]}')
+print(f'converged: {result[\"converged\"]}')
+print(f'snapshot_written: {result.get(\"snapshot_written\", true)}')
+print(f'iteration: {result[\"iteration\"]}')
+print(f'telemetry_ms: {result.get(\"telemetry_ms\", 0):.6f}')
+" 2>&1
+# Decoded Pipeline: test
+# Timestamp: 1784159953.245353
+
+[23934402fa8d2e5d] source=lidar signature=72e9d3dae90ca183
+  decoded: {
+  "density": 0.6,
+  "coordinates": {
+    "x": 10.0,
+    "y": 20.0
+  }
+}
+{
+  "timestamp": 1784159954.935128,
+  "machine_hash": "dd7cfb020260a03380d2473bef9e1d0b",
+  "co_sign_constant": "40428f39d7d06d47cb45eae1",
+  "ghost_nodes": [
+    {
+      "node_id": "40598881f9c54a96",
+      "mass": 509251191.0,
+      "signature": "f0c11b7feb8eb70a5bfa65b6f2f79574",
+      "co_sign_constant": "40428f39d7d06d47cb45eae1",
+      "parent_node_id": "1e5a8e77814e601e155e3c5dc5ed0c51ae640341",
+      "validated": true,
+      "timestamp": 1784159947.9010181
+    },
+    {
+      "node_id": "b23f4aeec2b7d968",
+      "mass": 3520826973.0,
+      "signature": "480ab45375b907ec1dd2cade72f52042",
+      "co_sign_constant": "40428f39d7d06d47cb45eae1",
+      "parent_node_id": "d1db8e5dc634d701121e25bc02024894c095bc37",
+      "validated": true,
+      "timestamp": 1784159948.817985
+    },
+    {
+      "node_id": "2b26d550ee69bdab",
+      "mass": 3030902187.0,
+      "signature": "58e98c7bb8caba4582456d443a408f4e",
+      "co_sign_constant": "40428f39d7d06d47cb45eae1",
+      "parent_node_id": "b4a7e5ab4246b5b058416ff9c75d39a10530c76c",
+      "validated": true,
+      "timestamp": 1784159949.5800571
+    }
+  ],
+  "validations": [
+    {
+      "validation_id": "e1e30b7cefe6c298",
+      "machine_hash": "dd7cfb020260a03380d2473bef9e1d0b",
+      "co_sign_constant": "40428f39d7d06d47cb45eae1",
+      "all_validated": true,
+      "timestamp": 1784159954.935126,
+      "ghost_node_count": 3
+    }
+  ]
+}
+N IS -rw-r--r--@ 1 u  staff  2 Jul 15 16:09 ASI-/rf_neural_anomaly_event.json
+00000000: 0000 That ASI file is not readable because it isn’t valid JSON. It’s only 2 bytes and contains 00 00 — null bytes — so there’s no text content to parse.
+
+we can assume N=ANomally 😂 wtf                                     ..
